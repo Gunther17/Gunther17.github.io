@@ -9,6 +9,7 @@
   <title>Gunther17</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="世界上只有两件东西可以震撼我们的心灵，一件事头顶上的星空，一件事内心深处的思想。">
+<meta name="keywords" content="世界上只有两件东西可以震撼我们的心灵，一件事头顶上的星空，一件事内心深处的思想。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gunther17">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -51,6 +52,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Gunther17</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">世界上只有两件东西可以震撼我们的心灵，一件事头顶上的星空，一件事内心深处的思想。</p>
 		
 
 		<nav class="header-menu">
@@ -107,6 +110,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Gunther17</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>世界上只有两件东西可以震撼我们的心灵，一件事头顶上的星空，一件事内心深处的思想。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -242,7 +247,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="测试文章，欢迎关注作者博客-https-gunther17-github-io"><a href="#测试文章，欢迎关注作者博客-https-gunther17-github-io" class="headerlink" title="测试文章，欢迎关注作者博客: https://gunther17.github.io/"></a>测试文章，欢迎关注作者博客: <a href="https://gunther17.github.io/" target="_blank" rel="noopener">https://gunther17.github.io/</a></h3>
+        <h3 id="测试文章，欢迎关注作者博客-https-gunther17-github-io"><a href="#测试文章，欢迎关注作者博客-https-gunther17-github-io" class="headerlink" title="测试文章，欢迎关注作者博客: https://gunther17.github.io/"></a>测试文章，欢迎关注作者博客: <a href="https://gunther17.github.io/" target="_blank" rel="noopener">https://gunther17.github.io/</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; largestValues(TreeNode root) &#123;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();</span><br><span class="line">        </span><br><span class="line">        List&lt;Integer&gt; res = new LinkedList&lt;Integer&gt;();</span><br><span class="line">        if (root == null) return res;</span><br><span class="line">        </span><br><span class="line">        queue.offer(root);</span><br><span class="line">        while (!queue.isEmpty()) &#123;</span><br><span class="line">            int levelNum = queue.size();</span><br><span class="line">            int temp = queue.peek().val;</span><br><span class="line">            if (queue.peek().left != null) queue.offer(queue.peek().left);</span><br><span class="line">            if (queue.peek().right != null) queue.offer(queue.peek().right);</span><br><span class="line">            queue.poll();</span><br><span class="line">            for (int i = 1; i &lt; levelNum; i++) &#123;</span><br><span class="line">                if (queue.peek().val &gt; temp) temp = queue.peek().val;</span><br><span class="line">                if (queue.peek().left != null) queue.offer(queue.peek().left);</span><br><span class="line">                if (queue.peek().right != null) queue.offer(queue.peek().right);</span><br><span class="line">                queue.poll();</span><br><span class="line">            &#125;</span><br><span class="line">            res.add(temp);</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
